@@ -1,8 +1,6 @@
-#include <iostream>
-#include "grammar.hpp"
-#include "input.hpp"
+#include "parser.hpp"
 
-class Earley {
+class Earley : public IParser {
 public:
     struct State {
 
@@ -28,8 +26,9 @@ public:
 
     }
 
+    // IParser
     // return if grammar contains word
-    bool parse(const string& word) {
+    virtual bool parse(const string& word) override {
         // not implemented
         return false;
     }
@@ -42,17 +41,6 @@ private:
     // ???
 };
 
-int main() {
-    CFG grammar;
-    std::cin >> grammar;
-
-    Earley parser(std::move(grammar));
-    string word;
-    for (;;) {
-        std::getline(std::cin, word);
-        if (word.empty()) {
-            break;
-        }
-        std::cout << (parser.parse(word) ? "YES\n" : "NO\n");
-    }
+IParser* make_parser(CFG grammar) {
+    return new Earley(std::move(grammar));
 }

@@ -3,4 +3,4 @@ project(Earley_algorithm)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Earley earley/earley.cpp)
+add_executable(Earley earley.cpp main.cpp)
