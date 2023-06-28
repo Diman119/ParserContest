@@ -1,0 +1,14 @@
+Правильные скобочные последовательности
+
+<S>
+<S> ::= "("<S>")"<S> | ""
+end
+
+
+Палиндромы из символов abcdef
+
+<palindrome>
+<palindrome> ::= "a" <palindrome> "a" | "b" <palindrome> "b" | "c" <palindrome> "c" | "d" <palindrome> "d" | "e" <palindrome> "e" | "f" <palindrome> "f"
+<palindrome> ::= <letter> | ""
+<letter>     ::= "a" | "b" | "c" | "d" | "e" | "f"
+end
